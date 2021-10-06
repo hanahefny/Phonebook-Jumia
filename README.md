@@ -44,12 +44,6 @@ It was required to create a single-page web app that displays a a list of custom
     * Validity Filter : Server-side filter and pagination after retreiving data.
     * Country and Validity filter: Database country filter , and server-side validity filter and pagination.
 
-* Space complexity vs time Complexity: Deciding wether
-  * To store the rule for validity and country name and code in 2 maps (more Space) to retreive country code by a given country name in O(1).
-    * To store the rule for validity and country name and code in 1 map and retreive the name of a given country code in O(n).
-
-I went for the second choice as this is only performed in case of filtring by country.
-
 ## Enhancements plan for existing code
 
 * Store the hard-coded rules in a json file to make it open for extention close for modification (open-close principle) :
