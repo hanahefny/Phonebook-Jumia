@@ -1,7 +1,6 @@
 # Customer phone book project
 
-This is  project created for a restful fullstack Web project. 
-It Simulates a phonebook of some customers with their country and phone and wether this phone number is valid or no
+This a spring boot application that simulates a phonebook of some customers with their country and phone and whether this phone number is valid or no
 
 ## Technologies & Frameworks used for development
 
@@ -39,16 +38,15 @@ It was required to create a single-page web app that displays a a list of custom
 ## Challenges
 
 * Database doesn't contain the validity of the phone number and thus this had to be checked after the database retrieval and this lead to the following decision:
+  * Devide the filtering to different cases to prevent retreiving all data in all cases. 
 
-** Devide the filtering to different cases to prevent retreiving all data in all cases. 
-
-*** Country Filter : Database filter and pagination.
-*** Validity Filter : Server-side filter and pagination after retreiving data.
-*** Country and Validity filter: Database country filter , and server-side validity filter and pagination.
+    * Country Filter : Database filter and pagination.
+    * Validity Filter : Server-side filter and pagination after retreiving data.
+    * Country and Validity filter: Database country filter , and server-side validity filter and pagination.
 
 * Space complexity vs time Complexity: Deciding wether
-** To store the rule for validity and country name and code in 2 maps (more Space) to retreive country code by a given country name in O(1).
-** To store the rule for validity and country name and code in 1 map and retreive the name of a given country code in O(n).
+  * To store the rule for validity and country name and code in 2 maps (more Space) to retreive country code by a given country name in O(1).
+    * To store the rule for validity and country name and code in 1 map and retreive the name of a given country code in O(n).
 
 I went for the second choice as this is only performed in case of filtring by country.
 
@@ -63,7 +61,7 @@ I went for the second choice as this is only performed in case of filtring by co
 * Lombok (for getter & setter generation).
 
 ## Docorizing the app
-** A docker-compose file and docker file are added to dockorize the app.
+* A docker-compose file and docker file are added to dockorize the app.
 
 ## How to run the project 
 
@@ -97,15 +95,15 @@ Service unit tests
 
 * Filtering by Country
 
-![](Screenshots/Filter_by_country.PNG)
+![](Screenshots/filter_by_country.PNG)
 
 * Filtering by Validity
 
-![](Screenshots/Filter_ by_validity.PNG)
+![](Screenshots/filter_ by_validity.PNG)
 
 * Filtering by both Country & Validity
 
-![](Screenshots/Filter_by_both.PNG)
+![](Screenshots/filter_by_both.PNG)
 
 
 
