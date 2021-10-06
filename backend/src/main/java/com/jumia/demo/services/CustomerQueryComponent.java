@@ -31,6 +31,7 @@ public class CustomerQueryComponent {
    * In case of Filtering with countryName filtering and paging can be done from database
    * In case of Filtering with validity (transient field not stored in db) the data is filter on server side
    * In case of Filtering with validity paging is also done in server side
+   * Server-side validity: records will be filtered for validity and their number may be less than the number required in the page
    * @param filterAndPaginationModel Model with page and filter parameters
    * @return A page of the customer information
    */
@@ -45,17 +46,10 @@ public class CustomerQueryComponent {
     if (!isFilterByValidity && !isFilterByCountry) {
       return getAllCustomers(pageable);
     } else if (!isFilterByValidity && isFilterByCountry) {
-      //We don't need server-side paging as there is no validity filter
       return getFilteredCustomersByCountry(pageable, filterAndPaginationModel.getCountry());
     } else if (isFilterByValidity && !isFilterByCountry) {
-      // Server-side filtering and paging
-      // If we use database paging (findAll(pagable))
-      // As records will be filtered for validity and their number may be less than the number required in the page
       return getFilteredCustomersByValidity(pageable, filterAndPaginationModel.getIsValid());
     }
-    // Filter by both Validity and Country
-    // Server-side paging 
-    // As records will be filtered for validity and their number may be less than the number required in the page
     else {
       return getFilteredCustomersByCountryAndValidity(pageable, filterAndPaginationModel.getCountry(),
           filterAndPaginationModel.getIsValid());

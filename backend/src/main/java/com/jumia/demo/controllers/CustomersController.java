@@ -2,6 +2,8 @@ package com.jumia.demo.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,11 +21,14 @@ import com.jumia.demo.utils.FilterAndPaginationUtils;
 @CrossOrigin
 @RequestMapping(path = "/customers")
 public class CustomersController {
+  private static final Logger LOGGER = LoggerFactory.getLogger(CustomersController.class);
 
   @Autowired
   private CustomerService customerService;
   @Autowired
   private CountryService countryService;
+
+  private static final String DEFAULT_PAGE_COUNT = "10";
 
   @GetMapping
   public ResponseEntity<PaginatedCustomerResponse> getCustomers(
@@ -31,6 +36,14 @@ public class CustomersController {
       @RequestParam(defaultValue = "10") int itemsPerPage,
       @RequestParam(required = false) String country,
       @RequestParam(required = false) Boolean isValid) {
+    if (page < 0) {
+      LOGGER.warn("Page index cannot be less than zero!");
+      page = 0;
+    }
+    if (itemsPerPage <= 1) {
+      LOGGER.warn("Page items cannot be less than one!");
+      itemsPerPage = Integer.valueOf(DEFAULT_PAGE_COUNT);
+    }
     return ResponseEntity.ok(
         customerService.findAndFilterCustomers(FilterAndPaginationUtils.getModel(page, itemsPerPage, country, isValid)));
   }

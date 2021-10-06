@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-//Object to be sent to Service instead od sending all params to every method
+//Object to be sent to Service instead of sending all params to every method
 public class FilterAndPaginationModel {
   private int page;
   private int itemsPerPage;

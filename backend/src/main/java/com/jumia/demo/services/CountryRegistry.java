@@ -29,7 +29,7 @@ public class CountryRegistry {
   }
 
   /**
-   * this method complexity O(n), it could have been O(1) by creating another map
+   * This method complexity O(n), it could have been O(1) by creating another map
    * with country value=Country name and code= CountryCode but will increase size of memory stored
    * @param countryName
    * @return Country code from map
