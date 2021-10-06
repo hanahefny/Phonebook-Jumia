@@ -91,7 +91,7 @@ Service unit tests
 
 * Find all
 
-![](Screenshots/show_all.PNG)
+![](Screenshots/show_all .PNG)
 
 * Filtering by Country
 
@@ -99,7 +99,7 @@ Service unit tests
 
 * Filtering by Validity
 
-![](Screenshots/Filter_ by_validity.PNG)
+![](Screenshots/Filter_by_validity.PNG)
 
 * Filtering by both Country & Validity
 
