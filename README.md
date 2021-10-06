@@ -46,8 +46,7 @@ It was required to create a single-page web app that displays a a list of custom
 
 ## Enhancements plan for existing code
 
-* Store the hard-coded rules in a json file to make it open for extention close for modification (open-close principle) :
-
+* Store the hard-coded rules in a json file to make it open for extention close for modification (open-close principle) 
 * Security and validation enhancement 
 
 ## Aditional frameworks used to enhance coding style and cleanliness
