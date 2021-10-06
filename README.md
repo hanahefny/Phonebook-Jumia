@@ -91,19 +91,19 @@ Service unit tests
 
 * Find all
 
-![](Screenshots/show_all .PNG)
+![](Screenshots/show_all.PNG)
 
 * Filtering by Country
 
-![](Screenshots/filter_by_country.PNG)
+![](Screenshots/Filter_by_country.PNG)
 
 * Filtering by Validity
 
-![](Screenshots/filter_ by_validity.PNG)
+![](Screenshots/Filter_ by_validity.PNG)
 
 * Filtering by both Country & Validity
 
-![](Screenshots/filter_by_both.PNG)
+![](Screenshots/Filter_by_both.PNG)
 
 
 
