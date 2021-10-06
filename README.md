@@ -84,7 +84,7 @@ Service unit tests
 
 * Find all
 
-![](Screenshots/show_all .PNG)
+![](Screenshots/show_all.PNG)
 
 * Filtering by Country
 
